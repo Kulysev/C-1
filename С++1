@@ -1,0 +1,147 @@
+1.
+#include <iostream>
+using namespace std;
+
+int main() {
+    double R1, R2, R3;
+    cout << "Введите R1: ";
+    cin >> R1;
+    cout << "Введите R2: ";
+    cin >> R2;
+    cout << "Введите R3: ";
+    cin >> R3;
+
+    double R0 = 1 / (1/R1 + 1/R2 + 1/R3);
+    cout << "Сопротивление R0: " << R0 << " Ом" << endl;
+
+    return 0;
+}
+2.
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    double L;
+    cout << "Введите длину окружности: ";
+    cin >> L;
+
+    double R = L / (2 * M_PI);
+    double S = M_PI * R * R;
+    cout << "Площадь круга: " << S << " квадратных единиц" << endl;
+
+    return 0;
+}
+3.
+#include <iostream>
+using namespace std;
+
+int main() {
+    double v, t, a;
+    cout << "Введите скорость (м/с): ";
+    cin >> v;
+    cout << "Введите время (с): ";
+    cin >> t;
+    cout << "Введите ускорение (м/с²): ";
+    cin >> a;
+
+    double S = v * t + (a * t * t) / 2;
+    cout << "Пройденное расстояние: " << S << " метров" << endl;
+
+    return 0;
+}
+4.
+#include <iostream>
+using namespace std;
+
+int main() {
+    int total_seconds;
+    cout << "Введите время в секундах: ";
+    cin >> total_seconds;
+
+    int hours = total_seconds / 3600;
+    int minutes = (total_seconds % 3600) / 60;
+    int seconds = total_seconds % 60;
+
+    cout << hours << " часов, " << minutes << " минут, " << seconds << " секунд" << endl;
+
+    return 0;
+}
+5.
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    double amount;
+    cout << "Введите дробное число: ";
+    cin >> amount;
+
+    int dollars = static_cast<int>(amount);
+    int cents = static_cast<int>((amount - dollars) * 100 + 0.5); // округление
+
+    cout << dollars << " долларов и " << cents << " центов" << endl;
+
+    return 0;
+}
+6.
+#include <iostream>
+using namespace std;
+
+int main() {
+    int days;
+    cout << "Введите количество дней: ";
+    cin >> days;
+
+    int weeks = days / 7;
+    int remaining_days = days % 7;
+
+    cout << weeks << " недели и " << remaining_days << " дня" << endl;
+
+    return 0;
+}
+7.
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    double distance;
+    cout << "Calculating running speed." << endl;
+    cout << "Enter the length of distance (meters) = ";
+    cin >> distance;
+
+    double time_input;
+    cout << "Enter time (min.sec) = ";
+    cin >> time_input;
+
+    int minutes = static_cast<int>(time_input);
+    int seconds = static_cast<int>((time_input - minutes) * 100);
+    int total_seconds = minutes * 60 + seconds;
+
+    double speed_m_s = distance / total_seconds;
+    double speed_km_h = speed_m_s * 3.6;
+
+    cout << "Distance: " << distance << " m" << endl;
+    cout << "Time: " << minutes << " min " << seconds << " sec = " << total_seconds << " seconds" << endl;
+    cout << "You were running at speed " << fixed << setprecision(2) << speed_km_h << " km/h" << endl;
+
+    return 0;
+}
+8.
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    double principal, annual_rate;
+    cout << "Введите сумму вклада в евро: ";
+    cin >> principal;
+    cout << "Введите процент годовых: ";
+    cin >> annual_rate;
+
+    double monthly_payment = (principal * (annual_rate / 100)) / 12;
+    cout << "Сумма, выплачиваемая банком каждый месяц: " << fixed << setprecision(2) << monthly_payment << " евро" << endl;
+
+    return 0;
+}
